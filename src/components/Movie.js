@@ -10,7 +10,7 @@ function Movie({id, coverImg, title, summary, genres }){
               <Link to={`/movie/${id}`}>{title}</Link>  {/** Link : 브라우저 새로고침 없이 유저를 다른 페이지로 이동시켜주는 컴포넌트 */}
               {/** id값을 받아와서 넣어줌 */}
             </h2>
-            <p>{summary}</p>
+            <p>{summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p>
             <ul>
               {genres.map((g) => (
                 <li key={g}>{g}</li>
